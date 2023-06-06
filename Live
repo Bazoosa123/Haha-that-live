@@ -1,27 +1,3 @@
-Date=20   -- Expiry date
-Month=6       -- Expiry month 
-Year=2023     -- Expiry year
-expiremessage="Script has expired. New version available"  --Expiry message 
---This script will expire on 15/05/2020
-
---Do not change below code 
-function check(t) 
-if t<10 then t="0"..t end
-return t
-end
-expiredate=Year.. check(Month).. check(Date)
-date=gg.makeRequest("https://raw.githubusercontent.com/Bazoosa123/Haha-that-live/main/Live").headers["Date" ][1]  --guimp.com is smallest webpage so takes less time for loading 
-month={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-for i=1,12 do
- if month[i]==string.sub(date,9, 11) then
-      if i<10 then
-       i="0"..i 
-      end 
- currentdate=string.sub(date,13, 16)..i..string.sub(date,6, 7)  
- end
-end
-if tonumber(currentdate)>=tonumber(expiredate) then gg.alert(expiremessage) os.exit() end 
--- Your script code below
 
 function initialization()
    USE_ORIGIN_PACKAGE = nil;
